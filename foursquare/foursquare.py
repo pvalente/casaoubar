@@ -27,10 +27,7 @@ import urllib2
 import urllib
 import base64
 
-try:
-    import simplejson
-except:
-    from django.utils import simplejson
+from django.utils import simplejson
     
 class Api():
     """
