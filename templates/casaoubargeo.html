@@ -5,23 +5,29 @@
 	body{padding:1em;font-family:calibri,sans-serif;}
 		h1{color:#363;margin:10px;}
 		ul{font-size:120%;margin:0;list-style:none;overflow:hidden;}
-		li{margin-bottom:1em;margin-right:10px;min-height:7.5em;background:#69c;padding:5px;-moz-border-radius:5px;-moz-box-shadow:2px 2px 2px rgba(0,0,0,.3);width:300px;float:left;}
+		li{margin-bottom:1em;margin-right:10px;min-height:9em;background:#69c;padding:5px;-moz-border-radius:5px;-moz-box-shadow:2px 2px 2px rgba(0,0,0,.3);width:300px;float:left;}
 		li p{margin:0;padding:0;}
 	    li h2{font-size:18px;font-family:calibri,sans-serif;padding-bottom:10px;text-shadow:1px 1px .3px #fff;}
 	    li p{line-height:1.2em;font-size:15px;font-family:calibri,sans-serif;font-size:14px;padding-bottom:.5em;}
 	li:hover{background:#6c6;}
-
+  h5 {margin-bottom:10px;font-family:calibri,sans-serif;font-size:28px;}
 
 	</style>
+	<script type="text/javascript" charset="utf-8">
+	function getGMaps(lat,lon) {
+				window.open("http://maps.google.com.br/maps?hl=pt-BR&ie=UTF8&ll=" + lat + ","+ lon);
+			}
+	</script>
     </head>
     <body>
-        <font size="5">casa<font color="#FF0000">ou</font>bar?</font>
+        <font size="5"><h5>casa<font color="#FF0000">ou</font>bar?</h5></font>
 			<ul>
 			{% for venue in venues.groups.0.venues %}
 			<li><h2>{{ venue.name }} <span>({{ venue.distance }}m)</span></h2>
 			<p>Quem está lá: {{ venue.stats.herenow}}</p>
 			<p>{{ venue.address }}</p>
 			<p>{{ venue.phone }}</p>
+			<p><a href="javascript:getGMaps({{ venue.geolat }},{{ venue.geolong }})">ver mapa</a></p>
 			</li>
 			{% endfor %}
 			</uL>

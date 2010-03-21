@@ -16,11 +16,14 @@ function geo() {
     </head>
     <body><center><font face="tahoma">
             <font size="10">casa<font color="#FF0000">ou</font>bar?</font>
-			<p>Km {{ km }} - Tendencia: {{ trend }}</p>
+			<!--<p>Km {{ km }} - Tendencia: {{ trend }}</p>-->
 			<h1>{{ decision }}</h1>
-			{% ifequal decision "bar" %}
-				<a href="javascript:geo()">Decidir o bar</a>
+			{% ifequal decision "bar :)" %}
+				<a href="javascript:geo()">decidir o bar</a>
 			{% endifequal %}
+            <br>
+            <br>
+            <p>PS: don't drink and drive! ;)</p>
 			</font></center>
     </body>
 </html>

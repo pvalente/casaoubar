@@ -52,16 +52,16 @@ def decide(km, trend):
     
     if trend == "BAIXA":
         if km < 100:
-            return "casa"
-        return "bar"
+            return "casa :("
+        return "bar :)"
     elif trend == "ESTAVEL":
         if km < 90:
-            return "casa"
-        return "bar"
+            return "casa :("
+        return "bar :)"
     elif trend == "ALTA":
         if km < 70:
-            return "casa"
-        return "bar"
+            return "casa :("
+        return "bar :)"
     
 
 class GeoHandler(webapp.RequestHandler):
