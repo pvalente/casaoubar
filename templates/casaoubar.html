@@ -1,6 +1,5 @@
 <html>
     <head>
-	 <link href="http://zoua.in/stuff/style.css" rel="stylesheet" type="text/css" />
        <script type="text/javascript" charset="utf-8">
        	
 function geo() {
@@ -15,13 +14,13 @@ function geo() {
 		}
        </script>
     </head>
-    <body><center>
-            <h2>Casa ou Bar?</h2>
+    <body><center><font face="tahoma">
+            <font size="10">casa<font color="#FF0000">ou</font>bar?</font>
 			<p>Km {{ km }} - Tendencia: {{ trend }}</p>
 			<h1>{{ decision }}</h1>
 			{% ifequal decision "bar" %}
 				<a href="javascript:geo()">Decidir o bar</a>
 			{% endifequal %}
-			</center>
+			</font></center>
     </body>
 </html>

@@ -25,9 +25,6 @@ class MainHandler(webapp.RequestHandler):
 
   def get(self):
     
-    f = foursquare.Api()
-    #venues = f.get_venues('-23.669957016335974', '-46.69841766357422', q='bar') 
-    
     y = yql.Public()
     query_km = "select * from html where xpath=\"//*[@id='lentidao']/strong\" and url='http://cetsp1.cetsp.com.br/monitransmapa/agora/'"
 
