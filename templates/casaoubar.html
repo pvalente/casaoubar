@@ -1,16 +1,18 @@
 <html>
     <head>
+	 <link href="http://zoua.in/stuff/style.css" rel="stylesheet" type="text/css" />
        <script type="text/javascript" charset="utf-8">
        	
+function geo() {
 		if (navigator.geolocation) {
   			/* geolocation is available */
 			navigator.geolocation.getCurrentPosition(function(position) {  
-				alert(position.coords.latitude, position.coords.longitude);  
+				window.location.href="/geo?lat=" + position.coords.latitude + "&lon="+ position.coords.longitude;
 			});  
 			} else {
  				alert("I'm sorry, but geolocation services are not supported by your browser.");
 			}
-		
+		}
        </script>
     </head>
     <body><center>
@@ -18,7 +20,7 @@
 			<p>Km {{ km }} - Tendencia: {{ trend }}</p>
 			<h1>{{ decision }}</h1>
 			{% ifequal decision "bar" %}
-				<a href="">Decidir o bar</a>
+				<a href="javascript:geo()">Decidir o bar</a>
 			{% endifequal %}
 			</center>
     </body>

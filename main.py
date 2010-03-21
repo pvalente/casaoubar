@@ -67,8 +67,23 @@ def decide(km, trend):
         return "bar"
     
 
+class GeoHandler(webapp.RequestHandler):
+
+  def get(self):
+
+   f = foursquare.Api()
+   venues = f.get_venues(self.request.get("lat"), self.request.get("lon"), q='bar') 
+
+
+   template_values = { 
+   'venues': venues,
+   }
+
+   path = os.path.join(os.path.dirname(__file__), 'templates/casaoubargeo.html')
+   self.response.out.write(template.render(path, template_values))
+
 def main():
-  application = webapp.WSGIApplication([('/', MainHandler)],
+  application = webapp.WSGIApplication([('/', MainHandler), ('/geo', GeoHandler)],
                                        debug=True)
   util.run_wsgi_app(application)
 

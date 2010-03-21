@@ -1,12 +1,15 @@
 <html>
     <head>
-     
+     <link href="http://zoua.in/stuff/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body><center>
+    <body>
             <h2>Casa ou Bar?</h2>
-			<ul>{% for venue in venues.groups.0.venues %}
-			<li><b>{{ venue.name }} ({{ venue.distance }}m)</b></li>
-			{% endfor %}</ul>
-			</center>
+			{% for venue in venues.groups.0.venues %}
+			<p><b>{{ venue.name }} ({{ venue.distance }}m)</b><br>
+			Quem está lá: {{ venue.stats.herenow}}<br>
+			{{ venue.address }}<br>
+			{{ venue.phone }}<br>
+			</p>
+			{% endfor %}
     </body>
 </html>
