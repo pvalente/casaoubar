@@ -1,0 +1,12 @@
+<html>
+    <head>
+     
+    </head>
+    <body><center>
+            <h2>Casa ou Bar?</h2>
+			<ul>{% for venue in venues.groups.0.venues %}
+			<li><b>{{ venue.name }} ({{ venue.distance }}m)</b></li>
+			{% endfor %}</ul>
+			</center>
+    </body>
+</html>
