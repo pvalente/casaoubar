@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-
+import os
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
+from google.appengine.ext.webapp import template
 from foursquare import foursquare
 
 class MainHandler(webapp.RequestHandler):
@@ -26,8 +26,12 @@ class MainHandler(webapp.RequestHandler):
     
     f = foursquare.Api()
     venues = f.get_venues('-23.669957016335974', '-46.69841766357422', q='bar') 
-    
-    self.response.out.write(venues)
+    template_values = {
+             'url': 'url',            
+            }
+        
+    path = os.path.join(os.path.dirname(__file__), 'templates%s.html' % "/casaoubar")
+    self.response.out.write(template.render(path, template_values))
 
 
 def main():
