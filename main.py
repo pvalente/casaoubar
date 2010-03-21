@@ -36,11 +36,15 @@ class MainHandler(webapp.RequestHandler):
     query_trend = 'select title from html where xpath=\'//*[@id="tendencia"]/img\' and url="http://cetsp1.cetsp.com.br/monitransmapa/agora/"'
     
     trend = y.execute(query_trend)
-        
+    
+    km = int(km.rows)
+    trend = trend.rows['title']
+
+    km = 160
     
     template_values = {
-             'km': km.rows,         
-             'trend': trend.rows['title'],
+             'km': km,         
+             'trend': trend,
              'decision' : decide(km, trend),         
             }
         
@@ -48,8 +52,7 @@ class MainHandler(webapp.RequestHandler):
     self.response.out.write(template.render(path, template_values))
 
 def decide(km, trend):
-    km = int(km.rows)
-    trend = trend.rows['title']
+    
     if trend == "BAIXA":
         if km < 100:
             return "casa"
