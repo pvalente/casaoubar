@@ -37,7 +37,7 @@ class MainHandler(webapp.RequestHandler):
     km = int(km.rows)
     trend = trend.rows['title']
 
-    km = 160
+    #km = 160
     
     template_values = {
              'km': km,         
