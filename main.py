@@ -18,12 +18,16 @@
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
-
+from foursquare import foursquare
 
 class MainHandler(webapp.RequestHandler):
 
   def get(self):
-    self.response.out.write('Hello world!')
+    
+    f = foursquare.Api()
+    venues = f.get_venues('-23.669957016335974', '-46.69841766357422', q='bar') 
+    
+    self.response.out.write(venues)
 
 
 def main():
