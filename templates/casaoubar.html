@@ -13,13 +13,16 @@ function geo() {
 			}
 		}
        </script>
+    <title>Casa ou Bar?</title>
+    <meta name = "viewport" content = "width = device-width">
+    <meta name = "viewport" content = "initial-scale = 1.0">
     </head>
     <body><center><font face="tahoma">
             <font size="10">casa<font color="#FF0000">ou</font>bar?</font>
 			<!--<p>Km {{ km }} - Tendencia: {{ trend }}</p>-->
 			<h1>{{ decision }}</h1>
 			{% ifequal decision "bar :)" %}
-				<a href="javascript:geo()">decidir o bar</a>
+				<a href="javascript:geo()">veja os bares perto de voc&ecirc;</a>
 				<br>
 	            <br>
 	            <p>PS: se beber não dirija! ;)</p>
